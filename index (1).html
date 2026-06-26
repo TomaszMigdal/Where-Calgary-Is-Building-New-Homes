@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Where Calgary Is Building New Homes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#16202b; --ink-soft:#5b6775; --paper:#f5f7f9;
+    --card:#ffffff; --line:#e3e8ed; --focus:#1f6feb;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0; background:var(--paper); color:var(--ink);
+    font-family:"Inter",system-ui,sans-serif; line-height:1.55; -webkit-font-smoothing:antialiased;}
+  .wrap{max-width:1040px; margin:0 auto; padding:clamp(28px,6vw,72px) clamp(20px,5vw,40px);}
+
+  .eyebrow{font-family:"IBM Plex Mono",monospace; font-size:12px; letter-spacing:.16em;
+    text-transform:uppercase; color:var(--ink-soft); margin:0 0 18px;}
+  h1{font-family:"Space Grotesk",sans-serif; font-weight:700;
+    font-size:clamp(30px,5.4vw,52px); line-height:1.04; letter-spacing:-.02em;
+    margin:0 0 18px; max-width:16ch;}
+  .lede{font-size:clamp(16px,2.2vw,20px); color:var(--ink-soft); max-width:62ch; margin:0 0 28px;}
+  .rule{display:flex; height:7px; border-radius:4px; overflow:hidden; max-width:520px;}
+  .rule span{flex:1;}
+  .seg-homes{background:linear-gradient(90deg,#e5f5e0,#74c476,#006d2c);}
+  .seg-value{background:linear-gradient(90deg,#ffffb2,#fd8d3c,#bd0026);}
+  .seg-vph{background:linear-gradient(90deg,#efedf5,#9e9ac8,#54278f);}
+  .seg-hot{background:linear-gradient(90deg,#2c7bb6,#f4f4f4,#d7191c);}
+  .meta{font-family:"IBM Plex Mono",monospace; font-size:12.5px; color:var(--ink-soft);
+    margin-top:16px; letter-spacing:.01em;}
+
+  .maps{display:grid; grid-template-columns:repeat(2,1fr); gap:18px; margin:clamp(36px,7vw,64px) 0 0;}
+  @media (max-width:680px){ .maps{grid-template-columns:1fr;} }
+  .card{display:flex; flex-direction:column; background:var(--card);
+    border:1px solid var(--line); border-radius:12px; padding:0 26px 24px;
+    text-decoration:none; color:inherit; overflow:hidden;
+    transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;}
+  .card-ramp{height:8px; margin:0 -26px 22px; transition:height .18s ease;}
+  .card:hover, .card:focus-visible{transform:translateY(-3px);
+    box-shadow:0 10px 28px rgba(22,32,43,.10); border-color:#cfd6dd;}
+  .card:hover .card-ramp, .card:focus-visible .card-ramp{height:12px;}
+  .card:focus-visible{outline:3px solid var(--focus); outline-offset:3px;}
+  .tag{font-family:"IBM Plex Mono",monospace; font-size:11px; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--ink-soft);}
+  .card h2{font-family:"Space Grotesk",sans-serif; font-weight:500; font-size:23px;
+    letter-spacing:-.01em; margin:9px 0 8px;}
+  .card p{font-size:14.5px; color:var(--ink-soft); margin:0 0 18px;}
+  .go{margin-top:auto; font-weight:500; font-size:14.5px; color:var(--ink);}
+  .go::after{content:" →"; transition:margin-left .18s ease;}
+  .card:hover .go::after{margin-left:4px;}
+
+  footer{margin-top:clamp(40px,8vw,72px); padding-top:24px; border-top:1px solid var(--line);
+    font-size:13.5px; color:var(--ink-soft);}
+  footer a{color:var(--ink); text-decoration:underline; text-underline-offset:2px;}
+  footer p{margin:0 0 6px;}
+  @media (prefers-reduced-motion:reduce){ *{transition:none !important;} }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="eyebrow">Spatial analysis · Calgary, Alberta</p>
+    <h1>Where Calgary Is Building New Homes</h1>
+    <p class="lede">New residential construction across Calgary's communities since 2023 — where homes are going up, what they're worth, and where building significantly clusters. Drawn from the City's building-permit record.</p>
+    <div class="rule" aria-hidden="true">
+      <span class="seg-homes"></span><span class="seg-value"></span>
+      <span class="seg-vph"></span><span class="seg-hot"></span>
+    </div>
+    <p class="meta">City of Calgary Open Data · new residential permits · 2023&ndash;present</p>
+  </header>
+
+  <main>
+    <section class="maps">
+      <a class="card" href="calgary_new_homes.html">
+        <span class="card-ramp seg-homes" aria-hidden="true"></span>
+        <span class="tag">Where homes go up</span>
+        <h2>New homes</h2>
+        <p>New homes added per community since 2023 — the current building frontier, and a leading signal of where new households are forming.</p>
+        <span class="go">Open map</span>
+      </a>
+
+      <a class="card" href="calgary_new_value.html">
+        <span class="card-ramp seg-value" aria-hidden="true"></span>
+        <span class="tag">Investment</span>
+        <h2>New-home value</h2>
+        <p>The permitted dollar value of new residential building by community — where the money behind new housing is flowing.</p>
+        <span class="go">Open map</span>
+      </a>
+
+      <a class="card" href="calgary_value_per_home.html">
+        <span class="card-ramp seg-vph" aria-hidden="true"></span>
+        <span class="tag">Housing type</span>
+        <h2>Value per home</h2>
+        <p>Average value per new home — a proxy for what's being built: higher points to low-density detached housing, lower to denser multifamily.</p>
+        <span class="go">Open map</span>
+      </a>
+
+      <a class="card" href="calgary_hotspots.html">
+        <span class="card-ramp seg-hot" aria-hidden="true"></span>
+        <span class="tag">Spatial statistics</span>
+        <h2>Hot spots</h2>
+        <p>Statistically significant clusters of new-home building, from a Local Moran's I analysis. Red marks hot spots; blue marks established areas adding little.</p>
+        <span class="go">Open map</span>
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    <p>Built by [replace: your name] — Master of Spatial Analysis.</p>
+    <p>Python · GeoPandas · PySAL · Folium &nbsp;·&nbsp; <a href="[replace: link to your GitHub repo]">View the code</a> &nbsp;·&nbsp; Data: City of Calgary, Open Government Licence.</p>
+  </footer>
+</div>
+</body>
+</html>
